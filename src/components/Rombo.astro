@@ -1,0 +1,55 @@
+---
+---
+<div class="rombo-container" id="romboContainer">
+  <div class="rombo"></div>
+</div>
+
+<script is:inline>
+  const rombo = document.querySelector('.rombo');
+  const container = document.getElementById('romboContainer');
+
+  rombo.addEventListener('animationend', () => {
+    
+    container.style.opacity = '0';
+    
+    container.style.pointerEvents = 'none';
+
+    setTimeout(() => {
+       container.style.display = 'none';
+    }, 500);
+  });
+</script>
+
+<style>
+  .rombo-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; 
+    z-index: 9999;         
+    transition: opacity 0.5s ease;
+  }
+
+  .rombo {
+    width: 150px;
+    height: 150px;
+    background: var(--color-primary, #FFD700);
+    transform: rotate(45deg);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    animation: expand 2.5s forwards ease-in-out;
+  }
+
+  @keyframes expand {
+    0% {
+      transform: rotate(45deg) scale(1);
+    }
+    40% {
+        transform: rotate(45deg) scale(1);
+    }
+    100% {
+      transform: rotate(45deg) scale(30);
+    }
+  }
+</style>

@@ -1,0 +1,25 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Rombo from '../components/Rombo.astro';
+
+---
+
+    <Rombo/>
+
+<MainLayout title="DentalGold - Clínica Dental">
+    <header>
+        <Navbar />
+    </header>
+    
+    <main>
+        <Hero />
+        <Services />
+        </main>
+
+    <footer style="padding: 2rem; text-align: center; border-top: 1px solid #333; margin-top: 2rem;">
+        <p style="color: #777;">&copy; 2025 DentalGold. Todos los derechos reservados.</p>
+    </footer>
+</MainLayout>
